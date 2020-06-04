@@ -25,10 +25,11 @@ void writeConfiguration() {
 
   long var2 = 33333;
   EEPROMwl.put(INDEX_CONFIGURATION_VAR2, var2);
+  // EEPROMwl.put(INDEX_CONFIGURATION_VAR2, (long)123456); // example with value
 }
 
 void readConfiguration() {
-  byte var1 = EEPROMwl.read(INDEX_CONFIGURATION_VAR1);
+  byte var1 = EEPROMwl.read(INDEX_CONFIGURATION_VAR1); // attention: read can only be used for bytes
   Serial.print(F("var1: "));
   Serial.println(var1);
 
